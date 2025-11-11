@@ -30,52 +30,52 @@ export default function Signup() {
         <div className="min-h-screen flex items-center justify-center px-4 relative overflow-hidden">
             {/* Decorative Blobs */}
 
-            <div className="relative bg-white/10 backdrop-blur-2xl rounded-3xl p-10 w-full max-w-xl shadow-2xl text-white space-y-8 border border-white/20 flex flex-col items-center">
+            <div className="relative bg-card/80 backdrop-blur-2xl rounded-3xl p-10 w-full max-w-xl shadow-2xl text-foreground space-y-8 border-2 border-secondary/50 neon-border-green flex flex-col items-center">
                 <div className="flex flex-col items-center gap-2 mb-2">
-                    <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="url(#a)"/><path d="M24 13c-4.418 0-8 3.134-8 7v2c0 1.657 1.343 3 3 3h10c1.657 0 3-1.343 3-3v-2c0-3.866-3.582-7-8-7Zm0 2c3.314 0 6 2.239 6 5v2c0 .552-.448 1-1 1H19c-.552 0-1-.448-1-1v-2c0-2.761 2.686-5 6-5Zm-5 13a1 1 0 0 0-1 1v2c0 2.21 3.134 4 7 4s7-1.79 7-4v-2a1 1 0 0 0-1-1H19Zm1 2h8v1c0 .552-.448 1-1 1h-6c-.552 0-1-.448-1-1v-1Z" fill="#fff"/>
-                    <defs><linearGradient id="a" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stopColor="#6366F1"/><stop offset="1" stopColor="#EC4899"/></linearGradient></defs></svg>
-                    <h2 className="text-4xl font-extrabold text-transparent bg-gradient-to-r from-indigo-300 via-purple-300 to-pink-300 bg-clip-text drop-shadow-lg text-center">Create an Account</h2>
-                    <p className="text-indigo-100 text-base text-center">Join BrainCache and start your quiz adventure! 🎉</p>
+                    <svg width="48" height="48" fill="none" viewBox="0 0 48 48"><circle cx="24" cy="24" r="24" fill="url(#a)"/><path d="M24 13c-4.418 0-8 3.134-8 7v2c0 1.657 1.343 3 3 3h10c1.657 0 3-1.343 3-3v-2c0-3.866-3.582-7-8-7Zm0 2c3.314 0 6 2.239 6 5v2c0 .552-.448 1-1 1H19c-.552 0-1-.448-1-1v-2c0-2.761 2.686-5 6-5Zm-5 13a1 1 0 0 0-1 1v2c0 2.21 3.134 4 7 4s7-1.79 7-4v-2a1 1 0 0 0-1-1H19Zm1 2h8v1c0 .552-.448 1-1 1h-6c-.552 0-1-.448-1-1v-1Z" fill="currentColor" className="text-secondary"/>
+                    <defs><linearGradient id="a" x1="0" y1="0" x2="48" y2="48" gradientUnits="userSpaceOnUse"><stop stopColor="oklch(0.85 0.25 130)"/><stop offset="1" stopColor="oklch(0.80 0.20 130)"/></linearGradient></defs></svg>
+                    <h2 className="text-4xl font-extrabold text-secondary neon-text-green drop-shadow-lg text-center">Create an Account</h2>
+                    <p className="text-foreground text-base text-center">Join BrainCache and start your quiz adventure! 🎉</p>
                 </div>
                 <form onSubmit={handleSignup} className="space-y-5 w-full">
                     <div>
-                        <label className="block text-sm mb-1 text-indigo-200 font-semibold">Name</label>
+                        <label className="block text-sm mb-1 text-primary font-semibold">Name</label>
                         <input
                             name="name"
                             required
                             value={form.name}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder-indigo-200 border border-white/20 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white/30 transition"
+                            className="w-full px-4 py-2 rounded-xl bg-input text-foreground placeholder-muted-foreground border-2 border-border focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition"
                             placeholder="Full Name (e.g., Ada Lovelace)"
                         />
                     </div>
                     <div>
-                        <label className="block text-sm mb-1 text-indigo-200 font-semibold">Email</label>
+                        <label className="block text-sm mb-1 text-primary font-semibold">Email</label>
                         <input
                             name="email"
                             type="email"
                             required
                             value={form.email}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder-indigo-200 border border-white/20 focus:outline-none focus:ring-2 focus:ring-indigo-400 focus:bg-white/30 transition"
+                            className="w-full px-4 py-2 rounded-xl bg-input text-foreground placeholder-muted-foreground border-2 border-border focus:outline-none focus:ring-2 focus:ring-secondary focus:border-secondary transition"
                             placeholder="Email (e.g., ada@braincache.com)"
                         />
                     </div>
                     <div>
-                        <label className="block text-sm mb-1 text-indigo-200 font-semibold">Password</label>
+                        <label className="block text-sm mb-1 text-primary font-semibold">Password</label>
                         <input
                             name="password"
                             type="password"
                             required
                             value={form.password}
                             onChange={handleChange}
-                            className="w-full px-4 py-2 rounded-xl bg-white/20 text-white placeholder-indigo-200 border border-white/20 focus:outline-none focus:ring-2 focus:ring-pink-400 focus:bg-white/30 transition"
+                            className="w-full px-4 py-2 rounded-xl bg-input text-foreground placeholder-muted-foreground border-2 border-border focus:outline-none focus:ring-2 focus:ring-primary focus:border-primary transition"
                             placeholder="Create a strong password"
                         />
                     </div>
                     <button
                         type="submit"
-                        className="w-full bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 hover:from-pink-500 hover:to-indigo-500 py-3 rounded-full text-white font-bold text-lg shadow-lg transition-all flex items-center justify-center gap-2"
+                        className="w-full bg-secondary hover:bg-secondary/90 py-3 rounded-full text-secondary-foreground font-bold text-lg shadow-lg neon-glow-hover transition-all flex items-center justify-center gap-2"
                     >
                         Sign Up
                     </button>

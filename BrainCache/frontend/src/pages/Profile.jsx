@@ -32,15 +32,15 @@ export default function Profile() {
 
     if (loading) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-[#0f172a]">
-                <div className="text-center text-white text-lg">Loading...</div>
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center text-secondary text-lg neon-text-green">Loading...</div>
             </div>
         );
     }
     if (!user) {
         return (
-            <div className="min-h-screen flex items-center justify-center bg-[#0f172a]">
-                <div className="text-center text-red-500 text-lg">User not logged in</div>
+            <div className="min-h-screen flex items-center justify-center">
+                <div className="text-center text-destructive text-lg">User not logged in</div>
             </div>
         );
     }
@@ -60,57 +60,57 @@ export default function Profile() {
     // Optionally, install "react-icons" for beautiful icons: npm install react-icons
     return (
         <div className="min-h-screen flex items-center justify-center overflow-hidden">
-            <div className="w-full max-w-xl mx-auto bg-white/10 backdrop-blur-lg rounded-3xl shadow-2xl border border-indigo-400 p-6 relative overflow-hidden">
+            <div className="w-full max-w-xl mx-auto bg-card/80 backdrop-blur-lg rounded-3xl shadow-2xl border-2 border-primary/50 neon-border-green p-6 relative overflow-hidden">
                 {/* Decorative Gradient Circles */}
-                <div className="absolute -top-10 -left-10 w-32 h-32 bg-indigo-400 opacity-20 rounded-full blur-2xl pointer-events-none"></div>
-                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-pink-400 opacity-20 rounded-full blur-2xl pointer-events-none"></div>
+                <div className="absolute -top-10 -left-10 w-32 h-32 bg-primary/20 opacity-20 rounded-full blur-2xl pointer-events-none"></div>
+                <div className="absolute -bottom-10 -right-10 w-32 h-32 bg-secondary/20 opacity-20 rounded-full blur-2xl pointer-events-none"></div>
 
                 <div className="flex flex-col items-center mb-6">
-                    <FaUserCircle className="text-6xl text-indigo-300 drop-shadow-lg mb-1" />
-                    <h1 className="text-3xl font-extrabold text-white tracking-tight mb-0.5 text-center">{user.name}</h1>
-                    <p className="text-base text-indigo-100">{user.email}</p>
+                    <FaUserCircle className="text-6xl text-primary neon-text-green drop-shadow-lg mb-1" />
+                    <h1 className="text-3xl font-extrabold text-foreground tracking-tight mb-0.5 text-center">{user.name}</h1>
+                    <p className="text-base text-secondary">{user.email}</p>
                 </div>
 
-                <div className="bg-white/10 rounded-2xl p-4 mb-6 shadow-inner border border-indigo-200">
-                    <h2 className="flex items-center gap-2 text-xl font-bold text-indigo-200 mb-3">
-                        <FaChartBar className="text-indigo-300" /> Your Quiz Stats
+                <div className="bg-card/50 rounded-2xl p-4 mb-6 shadow-inner border-2 border-secondary/50 neon-border-green">
+                    <h2 className="flex items-center gap-2 text-xl font-bold text-primary mb-3">
+                        <FaChartBar className="text-secondary" /> Your Quiz Stats
                     </h2>
                     <div className="grid grid-cols-2 gap-4">
                         <div className="flex flex-col items-center">
-                            <FaTrophy className="text-2xl text-yellow-400 mb-0.5" />
-                            <span className="text-base font-semibold text-white">{totalQuizzes}</span>
-                            <span className="text-xs text-indigo-100">Quizzes</span>
+                            <FaTrophy className="text-2xl text-primary mb-0.5" />
+                            <span className="text-base font-semibold text-foreground">{totalQuizzes}</span>
+                            <span className="text-xs text-muted-foreground">Quizzes</span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <FaQuestionCircle className="text-2xl text-pink-300 mb-0.5" />
-                            <span className="text-base font-semibold text-white">{totalQuestions}</span>
-                            <span className="text-xs text-indigo-100">Questions</span>
+                            <FaQuestionCircle className="text-2xl text-secondary mb-0.5" />
+                            <span className="text-base font-semibold text-foreground">{totalQuestions}</span>
+                            <span className="text-xs text-muted-foreground">Questions</span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <FaCheckCircle className="text-2xl text-green-400 mb-0.5" />
-                            <span className="text-base font-semibold text-white">{totalCorrect}</span>
-                            <span className="text-xs text-indigo-100">Correct</span>
+                            <FaCheckCircle className="text-2xl text-secondary mb-0.5" />
+                            <span className="text-base font-semibold text-foreground">{totalCorrect}</span>
+                            <span className="text-xs text-muted-foreground">Correct</span>
                         </div>
                         <div className="flex flex-col items-center">
-                            <FaChartBar className="text-2xl text-blue-400 mb-0.5" />
-                            <span className="text-base font-semibold text-white">{accuracy}%</span>
-                            <span className="text-xs text-indigo-100">Accuracy</span>
+                            <FaChartBar className="text-2xl text-primary mb-0.5" />
+                            <span className="text-base font-semibold text-foreground">{accuracy}%</span>
+                            <span className="text-xs text-muted-foreground">Accuracy</span>
                         </div>
                     </div>
                 </div>
 
                 <div className="flex justify-between gap-2 mb-6">
-                    <div className="flex-1 bg-gradient-to-r from-green-400/30 to-green-600/30 rounded-xl p-2 flex flex-col items-center border border-green-300">
-                        <span className="text-lg font-bold text-green-200">{easyQuizzes}</span>
-                        <span className="text-xs text-green-100">Easy</span>
+                    <div className="flex-1 bg-secondary/20 rounded-xl p-2 flex flex-col items-center border-2 border-secondary">
+                        <span className="text-lg font-bold text-secondary">{easyQuizzes}</span>
+                        <span className="text-xs text-foreground">Easy</span>
                     </div>
-                    <div className="flex-1 bg-gradient-to-r from-yellow-400/30 to-yellow-600/30 rounded-xl p-2 flex flex-col items-center border border-yellow-300">
-                        <span className="text-lg font-bold text-yellow-200">{mediumQuizzes}</span>
-                        <span className="text-xs text-yellow-100">Medium</span>
+                    <div className="flex-1 bg-primary/20 rounded-xl p-2 flex flex-col items-center border-2 border-primary">
+                        <span className="text-lg font-bold text-primary">{mediumQuizzes}</span>
+                        <span className="text-xs text-foreground">Medium</span>
                     </div>
-                    <div className="flex-1 bg-gradient-to-r from-pink-400/30 to-pink-600/30 rounded-xl p-2 flex flex-col items-center border border-pink-300">
-                        <span className="text-lg font-bold text-pink-200">{hardQuizzes}</span>
-                        <span className="text-xs text-pink-100">Hard</span>
+                    <div className="flex-1 bg-destructive/20 rounded-xl p-2 flex flex-col items-center border-2 border-destructive">
+                        <span className="text-lg font-bold text-destructive">{hardQuizzes}</span>
+                        <span className="text-xs text-foreground">Hard</span>
                     </div>
                 </div>
 
@@ -123,7 +123,7 @@ export default function Profile() {
                                 window.location.href = "/login";
                             }
                         }}
-                        className="px-6 py-2 rounded-full bg-gradient-to-r from-indigo-500 to-pink-500 text-white font-bold shadow-lg hover:scale-105 transition-transform"
+                        className="px-6 py-2 rounded-full bg-primary hover:bg-primary/90 text-primary-foreground font-bold shadow-lg neon-glow-hover hover:scale-105 transition-transform"
                     >
                         Logout
                     </button>
