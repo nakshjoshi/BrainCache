@@ -17,7 +17,7 @@ app.set("trust proxy", 1);
 // CORS should be the first middleware
 app.use(cors({
   origin: [
-    "https://braincache-frontend.onrender.com"
+    "https://braincache.onrender.com"
   ],
   credentials: true,
 }));
